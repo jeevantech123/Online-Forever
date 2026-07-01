@@ -3,10 +3,10 @@ import json
 import requests
 import websockets
 
-TOKEN = "Add your token here"
-STATUS = "online"  # online / dnd / idle
-CUSTOM_STATUS = "Hey!"  # Leave empty if you don't want a custom status
-USE_EMOJI = False
+TOKEN = "MzIzNjM1NzI2MTMyNzA3MzI5.G0ntRT.6dEdNQzngbUAY64iZu0IDahM_mLbJRcgdkSCOQ"
+STATUS = "idle"  # online / dnd / idle
+CUSTOM_STATUS = "Starlight over the seas!"  # Leave empty if you don't want a custom status
+USE_EMOJI = True
 
 headers = {"Authorization": TOKEN}
 
@@ -27,7 +27,7 @@ activity = {
 
 if USE_EMOJI:
     activity["emoji"] = {
-        "name": "🔥",   # Unicode emoji or emoji name
+        "name": "✨",   # Unicode emoji or emoji name
         "id": None,     # Required only for custom emojis
         "animated": False
     }
