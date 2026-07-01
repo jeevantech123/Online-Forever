@@ -4,7 +4,7 @@ import requests
 import websockets
 import os
 
-TOKEN = os.getenv("TOKEN")
+TOKEN = os.environ.get("TOKEN")
 STATUS = "idle"  # online / dnd / idle
 CUSTOM_STATUS = "Starlight over the seas!"  # Leave empty if you don't want a custom status
 USE_EMOJI = True
