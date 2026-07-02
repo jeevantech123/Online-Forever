@@ -94,7 +94,7 @@ async def discord_gateway():
             except Exception as e:
                 print("Connection lost, reconnecting...", e)
                 break
+        await asyncio.sleep(5)
 
 while True:
     asyncio.run(discord_gateway())
-    time.sleep(5)
