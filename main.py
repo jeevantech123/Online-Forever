@@ -8,7 +8,7 @@ TOKEN = os.environ.get("TOKEN")
 STATUS = "idle"  # online / dnd / idle
 CUSTOM_STATUS = "Starlight over the seas!"  # Leave empty if you don't want a custom status
 USE_EMOJI = True
-print(repr(api_key))
+print(repr(TOKEN))
 headers = {"Authorization": TOKEN}
 
 r = requests.get("https://discord.com/api/v10/users/@me", headers=headers)
