@@ -97,4 +97,4 @@ async def discord_gateway():
 
 while True:
     asyncio.run(discord_gateway())
-    asyncio.sleep(5)
+    await asyncio.sleep(5)
