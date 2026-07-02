@@ -3,6 +3,24 @@ import json
 import requests
 import websockets
 import os
+import threading
+from http.server import HTTPServer, BaseHTTPRequestHandler
+
+class DummyHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.end_headers()
+        self.wfile.write(b"Bot is running")
+
+    def log_message(self, format, *args):
+        pass  # suppress noisy request logs
+
+def run_dummy_server():
+    port = int(os.environ.get("PORT", 10000))
+    server = HTTPServer(("0.0.0.0", port), DummyHandler)
+    server.serve_forever()
+
+threading.Thread(target=run_dummy_server, daemon=True).start()
 
 TOKEN = os.environ.get("TOKEN")
 STATUS = "idle"  # online / dnd / idle
